@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Spy</title>
+</head>
+<body>
+        <h1>Курс валют:</h1>
+        <p>Hryvnia - Dollar: <span id="hryvnia&dollar">0.0</span> $</p>
+        <p>Dollar - Euro: <span id="dollar&euro">0.0</span> euro</p>
+        <p>Dollar - Pound: <span id="dollar&pound">0.0</span> pound</p>
+
+        <h1>Дрогоцінні метали:</h1>
+        <p>Золото: <span id="Gold">0.0</span> $</p>
+        <p>Платина: <span id="Platinum">0.0</span> $</p>
+        <p>Сріюло: <span id="Silver">0.0</span> $</p>
+
+        <h1>Дрогоцінні метали:</h1>
+        <p>Ртуть: <span id="Merecury">0.0</span> $</p>
+        <p>Паладій: <span id="Palladium">0.0</span> $</p>
+        <p>Мідь: <span id="Copper">0.0</span> $</p>
+
+        <h1>Акції:</h1>
+        <p>Intel: <span id="Intel">0.0</span> $</p>
+        <p>AMD: <span id="AMD">0.0</span> $</p>
+        <p>Nvidia: <span id="Nvidia">0.0</span> $</p>
+
+        <h1>Акції:</h1>
+        <p>Cocacola: <span id="Cocacola">0.0</span> $</p>
+        <p>Pepsi: <span id="Pepsi">0.0</span> $</p>
+        <p>McDonalds: <span id="McDonalds">0.0</span> $</p>
+
+        <h1>Курс валют:</h1>
+        <p>Dollar - Zloty: <span id="Dollar&Zloty">0.0</span> zloty</p>
+        <p>Dollar - Yen: <span id="Dollar&YEN">0.0</span> YEN</p>
+        <p>Hryvnia - Zloty: <span id="Hryvnia&Zloty">0.0</span> zloty</p>
+
+        <h1>Акції:</h1>
+        <p>IBM: <span id="IBM">0.0</span> $</p>
+        <p>Bayractar: <span id="bayractar">0.0</span> $</p>
+        <p>Cisco: <span id="cisco">0.0</span> $</p>
+
+        <h1>Дрогоцінні метали:</h1>
+        <p>Паладій: <span id="Palladium">0.0</span> $</p>
+        <p>Свинець: <span id="Silber">0.0</span> $</p>
+        <p>Іридій: <span id="Iridium">0.0</span> $</p>
+
+
+    <script>
+         async function fetchValuta1() {
+            const response = await fetch('/source_file1');
+            const data = await response.json();
+            document.getElementById('hryvnia&dollar').textContent = weather_data.hryvnia&dollar;
+            document.getElementById('dollar&euro').textContent = weather_data.dollar&euro;
+            document.getElementById('dollar&pound').textContent = weather_data.dollar&pound;
+        }
+
+        setInterval(fetchValuta1, 2000);
+        fetchValuta1();
+
+        async function fetchMetal1() {
+            const response = await fetch('/source_file2');
+            const data = await response.json();
+            document.getElementById('Gold').textContent = weather_data.Gold;
+            document.getElementById('Platinum').textContent = weather_data.Platinum;
+            document.getElementById('Silver').textContent = weather_data.Silver;
+        }
+
+        setInterval(fetchMetal1, 2000);
+        fetchMetal1();
+
+        async function fetchMetal2() {
+                const response = await fetch('/source_file3');
+                const data = await response.json();
+                document.getElementById('Mercury').textContent = weather_data.Mercury;
+                document.getElementById('Palladium').textContent = weather_data.Palladium;
+                document.getElementById('Copper').textContent = weather_data.Copper;
+        }
+
+        setInterval(fetchMetal2, 2000);
+        fetchMetal2();
+
+        async function fetchStock1() {
+            const response = await fetch('/source_file4');
+            const data = await response.json();
+            document.getElementById('Intel').textContent = weather_data.Intel;
+            document.getElementById('AMD').textContent = weather_data.AMD;
+            document.getElementById('Nvidia').textContent = weather_data.Nvidia;
+        }
+
+        setInterval(fetchStock1, 2000);
+        fetchStock1();
+
+        async function fetchStock2() {
+            const response = await fetch('/source_file5');
+            const data = await response.json();
+            document.getElementById('Cocacola').textContent = weather_data.Cocacola;
+            document.getElementById('Pepsi').textContent = weather_data.Pepsi;
+            document.getElementById('McDonalds').textContent = weather_data.McDonalds;
+        }
+
+        setInterval(fetchStock2, 2000);
+        fetchStock2();
+
+        async function fetchValuta2() {
+            const response = await fetch('/source_file6');
+            const data = await response.json();
+            document.getElementById('Dollar&Zloty').textContent = weather_data.Dollar&Zloty;
+            document.getElementById('Dollar&YEN').textContent = weather_data.Dollar&YEN;
+            document.getElementById('Hryvnia&Zloty').textContent = weather_data.Hryvnia&Zloty;
+        }
+        setInterval(fetchValuta2, 2000);
+        fetchValuta2();
+
+        async function fetchStock3() {
+            const response = await fetch('/source_file7');
+            const data = await response.json();
+            document.getElementById('IBM').textContent = weather_data.IBM;
+            document.getElementById('bayractar').textContent = weather_data.byractar;
+            document.getElementById('cisco').textContent = weather_data.cisco;
+        }
+
+        setInterval(fetchStock3, 2000);
+        fetchStock3();
+
+         async function fetchMetal3() {
+                const response = await fetch('/source_file8');
+                const data = await response.json();
+                document.getElementById('Palladium').textContent = weather_data.Palladium;
+                document.getElementById('Silber').textContent = weather_data.Silber;
+                document.getElementById('Iridium').textContent = weather_data.Iridium;
+        }
+
+        setInterval(fetchMetal2, 2000);
+        fetchMetal2();
+
+    </script>
+</body>
+</html>
+
