@@ -2,7 +2,7 @@ import time
 import random
 import requests
 
-companies = ["IBM", "Bayractar", "Cisco"]
+companies = ["IBM", "bayractar", "cisco"]
 
 def generate_price():
     return round(random.uniform(100, 500), 2)
