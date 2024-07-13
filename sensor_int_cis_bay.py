@@ -10,7 +10,8 @@ def generate_price():
 while True:
     data = {company: generate_price() for company in companies}
     try:
-        response = requests.post('http://192.168.0.19:5000', json=data)
+        # Зміна URL-адреси на localhost для роботи на будь-якій IP
+        response = requests.post('http://localhost:5000/update', json=data)
         print("Data sent:", data)
         print("Server response:", response.json())
     except Exception as e:
