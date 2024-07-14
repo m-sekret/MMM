@@ -42,8 +42,9 @@
         <p>Cisco: <span id="cisco">0.0</span> $</p>
 
         <h1>Додаткові метали:</h1>
-        <p>Свинець: <span id="Silber">0.0</span> $</p>
-        <p>Іридій: <span id="Iridium">0.0</span> $</p>
+        <p>paladium: <span id="paladium_freier">0.0</span> $</p>
+        <p>Silver: <span id="silver_freier">0.0</span> $</p>
+        <p>Iridium: <span id="iridium_freier">0.0</span> $</p>
 
     <script>
          async function fetchValuta1() {
@@ -125,9 +126,9 @@
          async function fetchMetal3() {
                 const response = await fetch('/current_weather');
                 const data = await response.json();
-                document.getElementById('Palladium').textContent = data.Palladium;
-                document.getElementById('Silber').textContent = data.Silber;
-                document.getElementById('Iridium').textContent = data.Iridium;
+                document.getElementById('paladium_freier').textContent = data.paladium_freier;
+                document.getElementById('silver_freier').textContent = data.silver_freier;
+                document.getElementById('iridium_freier').textContent = data.iridium_freier;
         }
 
         setInterval(fetchMetal3, 2000);

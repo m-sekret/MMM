@@ -22,9 +22,9 @@ weather_data = {"hryvnia_dollar": 0.0,
                 "IBM": 0.0,
                 "bayractar": 0.0,
                 "cisco": 0.0,
-                "Palladium": 0.0,
-                "Silber": 0.0,
-                "Iridium": 0.0,}
+                "paladium_freier": 0.0,
+                "silver_freier": 0.0,
+                "iridium_freier": 0.0,}
 update_sensor = ["hryvnia_dollar", "dollar_euro", "dollar_pound",
                 "Gold", "Platinum", "Silver",
                 "Mercury", "Palladium", "Copper",
@@ -32,7 +32,7 @@ update_sensor = ["hryvnia_dollar", "dollar_euro", "dollar_pound",
                 "Cocacola", "Pepsi", "McDonalds",
                 "Dollar_Zloty", "Dollar_YEN", "Hryvnia_Zloty",
                 "IBM", "bayractar", "cisco",
-                "Palladium", "Silber", "Iridium"]
+                "paladium_freier", "silver_freier", "iridium_freier"]
 
 @app.route('/update', methods=['POST'])
 def update_weather():
