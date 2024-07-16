@@ -1,34 +1,20 @@
-import yfinance as yf
-import pandas as pd
-import matplotlib.pyplot as plt
-from datetime import datetime
+import random
 import time
 
-def get_stock_data(tickers):
-    # Завантажуємо дані для кожного з тикерів
-    data = yf.download(tickers, period='1d', interval='1m')
-    return data['Adj Close']
+def generate_random_price(symbol):
+    return round(random.uniform(100, 500), 2)
 
-def plot_data(closing_prices):
-    closing_prices.plot(figsize=(14, 7))
-    plt.title('Ціни акцій Intel, AMD та Nvidia')
-    plt.xlabel('Дата')
-    plt.ylabel('Ціна (USD)')
-    plt.legend(closing_prices.columns)
-    plt.show()
+def display_stock_prices():
+    while True:
+        intel_price = generate_random_price('INTC')
+        amd_price = generate_random_price('AMD')
+        nvidia_price = generate_random_price('NVDA')
 
-tickers = ['INTC', 'AMD', 'NVDA']
+        print(f"Intel (INTC): ${intel_price}")
+        print(f"AMD (AMD): ${amd_price}")
+        print(f"Nvidia (NVDA): ${nvidia_price}")
 
-while True:
-    print(f"Оновлення даних: {datetime.now()}")
-    closing_prices = get_stock_data(tickers)
-    print(closing_prices.tail())
+        time.sleep(5)  # Оновлення кожні 5 секунд
 
-    # Візуалізуємо дані
-    plot_data(closing_prices)
-
-    # Зберігаємо дані в CSV-файл
-    closing_prices.to_csv('stock_prices.csv')
-
-    # Очікуємо 5 хвилин перед наступним оновленням
-    time.sleep(300)
+if __name__ == "__main__":
+    display_stock_prices()
